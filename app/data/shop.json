@@ -1,0 +1,17 @@
+{
+  "name": "teststore11111111111.myshopify.com",
+  "email": "oleh.masnyk@botscrew.com",
+  "phone": "2018752544",
+  "isBotActive": true,
+  "shopOwner": "Oleh Masnyk",
+  "isActive": true,
+  "creditsCount": 20215,
+  "chatbotNotification": true,
+  "problemSpottedNotification": true,
+  "newReviewNotification": true,
+  "firstVisit": false,
+  "messageCount": 67,
+  "perfectCount": 1,
+  "spottedCount": 1,
+  "buyerCount": 6
+}

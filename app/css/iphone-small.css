@@ -1,0 +1,12 @@
+.main{
+    min-width: 315px;
+    margin-left: auto;
+    margin-top: 10px;
+}
+.checkout{
+    width: 295px;
+    margin-left: -12px;
+}
+.checkout-exp, .checkout-cvc {
+    width: 80px;
+}

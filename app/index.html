@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css"/>
+  <link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.css"/>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
+
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" href="/css/getStarted.css"/>
+  <link rel="stylesheet" href="/css/left-menu.css"/>
+  <link rel="stylesheet" href="/css/messages.css"/>
+  <link rel="stylesheet" href="/css/settings.css"/>
+  <link rel="stylesheet" href="/css/broadcast.css"/>
+  <link rel="stylesheet" href="/css/support.css"/>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+
+  <!--<script src="/bower_components/angular/angular.min.js"></script>-->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="/bower_components/angular-material/angular-material.min.js"></script>
+  <script src="/bower_components/angular-carousel/dist/angular-carousel.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-websocket/2.0.1/angular-websocket.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>-->
+
+  <script src="/app.js"></script>
+
+  <script src="/js/externalFunctions.js"></script>
+
+  <script src="/js/modules/services/index.js"></script>
+
+  <script src="/js/modules/directives/index.js"></script>
+
+  <script src="/js/modules/controllers/mainCtrl.js"></script>
+  <script src="/js/modules/controllers/dashboardCtrl.js"></script>
+  <script src="/js/modules/controllers/getStartedCtrl.js"></script>
+  <script src="/js/modules/controllers/leftMenuCtrl.js"></script>
+  <script src="/js/modules/controllers/messagesCtrl.js"></script>
+  <script src="/js/modules/controllers/settingsCtrl.js"></script>
+  <script src="/js/modules/controllers/broadcastCtrl.js"></script>
+  <script src="/js/modules/controllers/supportCtrl.js"></script>
+
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+
+  <base href="/"/>
+</head>
+<body ng-app="HiSumo">
+  <div class="main row">
+    <div class="admin-panel-body col-xs-12" ng-controller="MainCtrl">
+      <input hidden="hidden" id="shopId" th:value="${shop}" />
+      <div class="inner">
+        <left-menu class="hidden col-xs-2"></left-menu>
+        <div ng-view="" class="col-xs-10 view-div"></div>
+      </div>
+    </div>
+  </div>
+  <!--<div ng-controller="AppCtrl" ng-cloak class="md-padding">-->
+  <!--<input id="shop" hidden name="shop" th:value="${shop}">-->
+  <!--<div layout="row">-->
+    <!--<div flex-offset="5"></div>-->
+    <!--<div flex="10">-->
+      <!--<ul class="nav navbar-nav navbar-right" layout="column" flex>-->
+        <!--<li flex><a href="#/"><i class="fa fa-home"></i> Dashboard</a></li>-->
+        <!--<li flex><a href="#messages"><i class="fa fa-comment"></i> Messages</a></li>-->
+        <!--<li flex><a href="#settings"><i class="fa fa-shield"></i> Settings</a></li>-->
+        <!--<li flex><a href="#broadcast"><i class="fa fa-shield"></i> Broadcast</a></li>-->
+        <!--<li flex><a href="#faq"><i class="fa fa-shield"></i> FAQ</a></li>-->
+        <!--<li flex><a href="#support"><i class="fa fa-shield"></i> Support</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!--<div flex-offset="5"></div>-->
+    <!--<ng-view flex></ng-view>-->
+  <!--</div>-->
+  <!--<form action="/paid" method="POST">-->
+    <!--<input hidden name="shopId" value="{{shopId}}">-->
+    <!--<script-->
+            <!--src="https://checkout.stripe.com/checkout.js" class="stripe-button"-->
+            <!--data-key="pk_test_jL3mNBnc2oT4N5IjnUhysrpT"-->
+            <!--data-amount="150"-->
+            <!--data-name="Demo Site"-->
+            <!--data-description="Widget"-->
+            <!--data-image="https://stripe.com/img/documentation/checkout/marketplace.png"-->
+            <!--data-locale="auto">-->
+      <!--Stripe.setPublishableKey('pk_test_jL3mNBnc2oT4N5IjnUhysrpT');-->
+    <!--</script>-->
+  <!--</form>-->
+<!--</div>-->
+</body>
+</html>

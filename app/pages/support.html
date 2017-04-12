@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="messages-container messages row">
+    <div class="top row">
+      <a class="tab-btn active" href="/support">New ticket</a>
+    </div>
+
+    <div class="broadcast-container row">
+      <div class="recharge-inner col-xs-4">
+        <h2>New ticket</h2>
+        <p class="subheader">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+      <div class="col-xs-4 new-message-outer">
+        <div class="row">
+          <p class="title">Subject</p>
+          <input type="text" class="new-subject" placeholder="Type your ticket subject"/>
+        </div>
+        <div class="row">
+          <p class="title">Your message</p>
+          <textarea id="supportMessage" class="new-message" placeholder="Describe your case"></textarea>
+        </div>
+        <!--<div class="symbols-left">160</div>-->
+        <a class="blue-btn" ng-click="support.submitMessage()">Submit</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <p>Congrats! Your ticket was successfully submited</p>
+      <div class="align-right">
+        <a class="classic-btn" ng-click="support.successModalClose()">Got it!</a>
+      </div>
+    </div>
+  </div>
+</div>

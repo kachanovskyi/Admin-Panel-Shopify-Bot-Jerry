@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="messages-container messages row">
+    <div class="top row">
+      <a class="tab-btn" href="/settings">Customize messages</a>
+      <a class="tab-btn chatbot" href="/settings-disable">Disable chatbot</a>
+      <a class="tab-btn active" href="/settings-notifications">Notifications</a>
+      <a class="tab-btn" href="/settings-recharge">Recharge</a>
+    </div>
+
+    <div class="notifications-container row">
+      <div class="col-xs-4">
+        <h2>Notifications</h2>
+        <p class="subheader">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+      <div class="col-xs-8">
+        <p class="title">Seller notifications</p>
+        <form id="sellerForm" name="seller-notifications" action="" method="get">
+          <input class="seller-checkbox" type="checkbox" ng-model="settings.problemSpotted" name="problem" ng-click="settings.setProblemSpotted()">Problem spotted messages<br>
+          <input class="seller-checkbox" type="checkbox" ng-model="settings.rechargeReminder" name="recharge" ng-click="settings.setRechargeReminder()">Recharge reminder<br>
+          <!--<label for="test">Label for my styled "checkbox"</label>-->
+          <!--<label class="myCheckbox">-->
+            <!--<input type="checkbox" name="test"/>-->
+            <!--<span></span>-->
+          <!--</label>-->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

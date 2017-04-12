@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="messages-container messages row">
+        <div class="top row">
+            <a class="tab-btn active" href="/broadcast">New message</a>
+            <a class="tab-btn" href="/broadcast-subscribers">Subscribers <span class="amount">{{broadcast.totalItems}}</span></a>
+        </div>
+
+        <div class="broadcast-container row">
+            <div class="recharge-inner col-xs-4">
+                <h2>New message</h2>
+                <p class="subheader">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <p class="balance">Your current balance: <span>{{broadcast.credits}} credits</span></p>
+            </div>
+            <div class="col-xs-4 new-message-outer">
+                <textarea class="new-message" placeholder="Type your message..." ng-model="broadcast.text"></textarea>
+                <!--<div class="symbols-left">160</div>-->
+                <a ng-class="broadcast.credits ? 'blue-btn tooltip' : 'blue-btn tooltip disabled'" ng-click="broadcast.confirmModalOpen()">Send message
+                    <span class="tooltiptext">Please recharge your account to continue enjoying the service</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p>Are your sure? Broadcasting will cost you {{broadcast.totalItems}} credits</p>
+            <div class="align-right">
+                <a class="classic-btn" ng-click="broadcast.confirmModalClose()">Cancel</a>
+                <a class="accept-btn" ng-click="broadcast.sendToSubscribers()">Do it!</a>
+            </div>
+        </div>
+    </div>
+</div>

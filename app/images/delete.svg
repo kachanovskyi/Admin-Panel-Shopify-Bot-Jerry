@@ -1,0 +1,35 @@
+<svg width="78" height="78" viewBox="0 0 78 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-7415 -3876)" figma:type="canvas">
+<g id="Group" figma:type="frame">
+<g id="Ellipse 2" filter="url(#filter0_d)" figma:type="ellipse">
+<use xlink:href="#path0_fill" transform="translate(7435 3886)" fill="#FFFFFF"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(7435 3886)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(7435 3886)" fill="#E2E2E3"/>
+</g>
+</g>
+<g id="Vector" figma:type="vector">
+<use xlink:href="#path2_fill" transform="translate(7449 3898)" fill="#F26565"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="7415" y="3876" width="78" height="78" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<desc>type="dropShadow" x="0" y="10" size="20" spread="0" color="0,0,0,0.05" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="10"/>
+<feGaussianBlur stdDeviation="10"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" d="M 38 19C 38 29.4934 29.4934 38 19 38C 8.50659 38 0 29.4934 0 19C 0 8.50659 8.50659 0 19 0C 29.4934 0 38 8.50659 38 19Z"/>
+<path id="path1_stroke_2x" d="M 37 19C 37 28.9411 28.9411 37 19 37L 19 39C 30.0457 39 39 30.0457 39 19L 37 19ZM 19 37C 9.05887 37 1 28.9411 1 19L -1 19C -1 30.0457 7.95431 39 19 39L 19 37ZM 1 19C 1 9.05887 9.05887 1 19 1L 19 -1C 7.95431 -1 -1 7.95431 -1 19L 1 19ZM 19 1C 28.9411 1 37 9.05887 37 19L 39 19C 39 7.95431 30.0457 -1 19 -1L 19 1Z"/>
+<path id="path2_fill" d="M 0.714286 12.4444C 0.714286 13.3 1.35714 14 2.14286 14L 7.85714 14C 8.64286 14 9.28572 13.3 9.28572 12.4444L 9.28572 3.11111L 0.714286 3.11111L 0.714286 12.4444ZM 10 0.777778L 7.5 0.777778L 6.78571 0L 3.21429 0L 2.5 0.777778L 0 0.777778L 0 2.33333L 10 2.33333L 10 0.777778Z"/>
+</defs>
+</svg>

@@ -1,0 +1,12 @@
+<svg width="20" height="20" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>home-icon</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4454 405)" figma:type="canvas">
+<g id="home-icon" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(4454 -405)" fill="#000000" fill-opacity="0.1"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 9.1532 0.373627L 0.29969 10.0908C -0.368279 10.824 0.153205 12 1.14588 12L 2.99988 12L 2.99988 19C 2.99988 19.5523 3.44764 20 3.99988 20L 6.99988 20C 7.55213 20 7.99988 19.5523 7.99988 19L 7.99988 12L 11.9999 12L 11.9999 19C 11.9999 19.5523 12.4476 20 12.9999 20L 15.9999 20C 16.5521 20 16.9999 19.5523 16.9999 19L 16.9999 12L 18.8539 12C 19.8466 12 20.368 10.824 19.7001 10.0908L 10.8466 0.373627C 10.3925 -0.124542 9.60731 -0.124542 9.1532 0.373627Z"/>
+</defs>
+</svg>

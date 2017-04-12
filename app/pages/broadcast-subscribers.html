@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="messages-container subscribers row">
+    <div class="top row">
+      <a class="tab-btn" href="/broadcast">New message</a>
+      <a class="tab-btn active" href="/broadcast-subscribers">Subscribers <span class="amount">{{broadcast.totalItems}}</span></a>
+    </div>
+
+    <div class="subscribers-container row">
+      <div class="messages-block">
+        <div class="message row" ng-repeat="subscriber in broadcast.subscribers">
+          <div class="col-xs-4 table-display">
+            <p class="info-p table-cell"><span>Name: </span>{{subscriber.name}}</p>
+          </div>
+          <div class="col-xs-3 id-column table-display">
+            <p class="info-p table-cell"><span>Phone: </span>{{subscriber.number}}</p>
+          </div>
+          <div class="col-xs-5 table-display">
+            <p class="info-p table-cell"><span>Email: </span>{{subscriber.email}}</p>
+            <div class="align-right table-cell">
+              <a class="warning-btn" ng-click="broadcast.confirmModalOpen(subscriber.id)">Delete</a>
+            </div>
+          </div>
+        </div>
+        <div class="pagination-container">
+          <ul ng-show="dashboard.totalItems >= 4" uib-pagination direction-links="false" boundary-links="true" total-items="dashboard.totalItems"
+              ng-model="dashboard.currentPage" items-per-page="4"
+              ng-change="dashboard.pageChanged()"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="deleteSubscriberModal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to delete this user?</p>
+      <div class="align-right">
+        <a class="classic-btn" ng-click="broadcast.confirmModalClose()">Cancel</a>
+        <a class="warning-btn" ng-click="broadcast.deleteUser()">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

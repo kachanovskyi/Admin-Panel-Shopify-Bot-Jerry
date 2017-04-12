@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <div class="messages-container messages row">
+    <div class="top row">
+      <a class="tab-btn" href="/settings">Customize messages</a>
+      <a class="tab-btn chatbot active" href="/settings-disable">Disable chatbot</a>
+      <a class="tab-btn" href="/settings-notifications">Notifications</a>
+      <a class="tab-btn" href="/settings-recharge">Recharge</a>
+    </div>
+
+    <div class="disable-container row">
+      <div class="col-xs-4">
+        <h2>Disable chatbot</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <a id="btnToggleChatbot1" ng-show="settings.chatbotState" class="warning-btn" ng-click="settings.chatbotStateModalOpen()">Disable chatbot</a>
+        <a id="btnToggleChatbot2" ng-show="!settings.chatbotState" class="accept-btn" ng-click="settings.chatbotStateModalOpen()">Enable chatbot</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="enabledStateModal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to disable chatbot?</p>
+      <div class="align-right">
+        <a class="classic-btn" ng-click="settings.chatbotStateModalClose(0)">Cancel</a>
+        <a class="warning-btn" ng-click="settings.chatbotStateModalClose(1)">Disable</a>
+      </div>
+    </div>
+  </div>
+  <div id="disabledStateModal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to enable chatbot?</p>
+      <div class="align-right">
+        <a class="classic-btn" ng-click="settings.chatbotStateModalClose(0)">Cancel</a>
+        <a class="accept-btn" ng-click="settings.chatbotStateModalClose(1)">Enable</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,362 @@
+[
+  {
+    "name": "change_address_confirm",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 18,
+        "value": "You are going to change your delivery address to {address}. Please confirm your action with 'Confirm' command."
+      },
+      {
+        "id": 18,
+        "value": "You are going to change your delivery address to {address}. Please confirm your action with 'Confirm' command."
+      },
+      {
+        "id": 18,
+        "value": "You are going to change your delivery address to {address}. Please confirm your action with 'Confirm' command."
+      },
+      {
+        "id": 18,
+        "value": "You are going to change your delivery address to {address}. Please confirm your action with 'Confirm' command."
+      }
+    ],
+    "parameters": [
+      {
+        "id": 3,
+        "parameter": "{address}",
+        "size": 30
+      }
+    ]
+  },
+  {
+    "name": "ask_subscribe",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 3,
+        "value": "Hey. I hope everything is going well. What about a subscription to newsletter?"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "cancel_order",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 7,
+        "value": "This action will cancel your order. Are you sure you want to continue? (Yes/No)"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "cancel_order_cancel",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 14,
+        "value": "Got it! Your order hasn't been canceled."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "cancel_order_confirm",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 15,
+        "value": "Done! Your order has been successfully canceled"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "cancel_order_error",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 36,
+        "value": "Sorry, You can not to cancel order"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "cancel_order_select_id",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 16,
+        "value": "Please enter order id which you want to cencel?"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "change_address",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 17,
+        "value": "Please enter your new delivery address to continue ..."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "change_address_error",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 37,
+        "value": "Sorry, You can not to change address"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "change_address_select_id",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 39,
+        "value": "Please enter order id which you want to change address?"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "change_address_success",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 19,
+        "value": "Done. Your delivery address has been successfully updated."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "disable_bot",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 20,
+        "value": "Are you sure you want to stop getting messages from me?"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "disable_bot_cancel",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 21,
+        "value": "Awesome. I'm so happy stay to hear it from you."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "disable_bot_success",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 22,
+        "value": "So pity, but I'll be glad to help you any time. Just send me a message with 'Start' command"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "express_shipping",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 23,
+        "value": "This action will update your delivery method to Express Shipping. Are you sure you want to continue? (Yes/No)"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "express_shipping_cancel",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 24,
+        "value": "Got it! Your delivery method hasn't been changed"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "express_shipping_error",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 38,
+        "value": "Sorry, You can not do set express shipping"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "express_shipping_select_id",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 40,
+        "value": "Please enter order id which you want to set express shipping?"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "express_shipping_success",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 25,
+        "value": "Your delivery method has been successfully updated."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "init_text_1",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 26,
+        "value": "Hey. My name is Jerry. I am here to make your buyer expierence simple and clear. Your order #{order.id} has been successfully accepted for processing."
+      }
+    ],
+    "parameters": [
+      {
+        "id": 1,
+        "parameter": "{order.id}",
+        "size": 10
+      }
+    ]
+  },
+  {
+    "name": "init_text_2",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 27,
+        "value": "Here is a list of commands to manage the order:* Change the delivery address * Upgrade to express shipping * Cancel order * Don’t text me"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "order_delivered",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 28,
+        "value": "Your order #{order.id} has been successfully delivered. Do you want to leave a review or report the item?"
+      }
+    ],
+    "parameters": [
+      {
+        "id": 1,
+        "parameter": "{order.id}",
+        "size": 10
+      }
+    ]
+  },
+  {
+    "name": "order_fulfillment",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 29,
+        "value": "Your order #{order.id} has been successfully accepted for processing. Click the link below to check your order delivery status:{url}"
+      }
+    ],
+    "parameters": [
+      {
+        "id": 1,
+        "parameter": "{order.id}",
+        "size": 10
+      },
+      {
+        "id": 4,
+        "parameter": "{url}",
+        "size": 20
+      }
+    ]
+  },
+  {
+    "name": "order_review",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 30,
+        "value": "Please leave a few words about delivered item..."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "order_review_cancel",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 31,
+        "value": "Got it! Thank you for your purchase"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "order_review_negative",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 32,
+        "value": "Thanks for your feedback. Your seller will contact your shortly."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "order_review_positive",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 33,
+        "value": "Done. Thank your for your purchase."
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "subscribe_no",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 34,
+        "value": "Got it. To subscribe our newsletter just send me a message with 'Subscribe' command"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "name": "subscribe_yes",
+    "shopId": "teststore11111111111.myshopify.com",
+    "values": [
+      {
+        "id": 35,
+        "value": "Done. We will send your useful materials without spam and nasty stuff. You can cancel your subscription anytime. Just send me 'Unsubscribe' command"
+      }
+    ],
+    "parameters": []
+  }
+]

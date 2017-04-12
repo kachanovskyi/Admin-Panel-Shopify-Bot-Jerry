@@ -1,0 +1,65 @@
+<div class="wrapper">
+    <div class="messages-container messages row">
+        <div class="top row">
+            <a class="tab-btn active" href="/settings">Customize messages</a>
+            <a class="tab-btn chatbot" href="/settings-disable">Disable chatbot</a>
+            <a class="tab-btn" href="/settings-notifications">Notifications</a>
+            <a class="tab-btn" href="/settings-recharge">Recharge</a>
+        </div>
+
+        <div class="container-inner">
+            <div class="customize-description col-xs-4">
+                <h2>Customize message</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit.
+                </p>
+            </div>
+            <div class="templates-container col-xs-8">
+                <div class="row" ng-repeat="template in settings.messTemplates">
+                    <p class="message-group-title">
+                        {{template.group}}
+                    </p>
+                    <div class="align-right scroll-btns">
+                        <a class="scroll-back"><img src="/images/right.svg"/> </a>
+                    </div>
+                    <div class="messages-group">
+                        <div class="message-template" ng-repeat="value in template.values">
+                            <p>{{value.value}}</p>
+                            <a class="classic-btn edit"
+                               ng-click="settings.editTemplate($parent.$index, $index)">Edit</a>
+                        </div>
+                        <div class="message-template add">
+                            <a class="classic-btn edit" ng-click="settings.addTemplate($index)">Add new variant</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="editModal" class="modal">
+                    <div class="modal-content edit">
+                        <!--<span class="close" ng-click="settings.closeEdit()">&times;</span>-->
+                        <div class="edit-field">
+                            <!--<span>{{settings.messTemplates[settings.currentParentIndex]}}</span>-->
+                            <span id="editMessageOne" class="editable" contenteditable="true"></span>
+                            <span ng-show="settings.messTemplates[settings.currentParentIndex].parameters.length >= 1" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
+                            <span id="editMessageTwo" ng-show="settings.message.length >= 1" class="editable" contenteditable="true"></span>
+                        </div>
+                        <a class="classic-btn edit" ng-click="settings.updateMessage()">Save</a>
+                    </div>
+                </div>
+                <div id="createModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" ng-click="settings.closeCreate()">&times;</span>
+                        <div class="edit-field">
+                            <!--<span>{{settings.messTemplates[settings.currentParentIndex]}}</span>-->
+                            <span id="createMessageOne" class="editable" contenteditable="true">{{settings.messageOne}}</span>
+                            <span ng-show="settings.messTemplates[settings.currentParentIndex].parameters.length >= 1" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
+                            <span id="createMessageTwo" ng-show="settings.message.length >= 1" class="editable" contenteditable="true">{{settings.messageTwo}}</span>
+                        </div>
+                        <a class="classic-btn edit" ng-click="settings.createMessage()">Save</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,68 @@
+[
+  {
+    "shopifyId": 5250486609,
+    "firstName": "Oleg",
+    "lastName": "Masnyk",
+    "phone": "5034367607",
+    "email": "oleh.masnyk@botscrew.com",
+    "messCount": 67,
+    "date": "01/04/17",
+    "perfect": true,
+    "subscriber": true
+  },
+  {
+    "shopifyId": 5250486610,
+    "firstName": "Oleh",
+    "lastName": "Masnyk",
+    "phone": "5034367608",
+    "email": "oleh.masnyk@botscrew.com",
+    "messCount": 0,
+    "date": "Today",
+    "perfect": false,
+    "subscriber": true
+  },
+  {
+    "shopifyId": 5250486611,
+    "firstName": "Oleh",
+    "lastName": "Masnyk",
+    "phone": "5034367609",
+    "email": "oleh.masnyk@botscrew.com",
+    "messCount": 0,
+    "date": "Today",
+    "perfect": false,
+    "subscriber": true
+  },
+  {
+    "shopifyId": 5250486612,
+    "firstName": "Oleh",
+    "lastName": "Masnyk",
+    "phone": "5034367610",
+    "email": "oleh.masnyk@botscrew.com",
+    "messCount": 0,
+    "date": "Today",
+    "perfect": false,
+    "subscriber": true
+  },
+  {
+    "shopifyId": 5250486613,
+    "firstName": "Oleh",
+    "lastName": "Masnyk",
+    "phone": "5034367611",
+    "email": "oleh.masnyk@botscrew.com",
+    "messCount": 0,
+    "date": "Today",
+    "perfect": false,
+    "subscriber": true
+  },
+  {
+    "shopifyId": 5250486614,
+    "firstName": "Oleh",
+    "lastName": "Masnyk",
+    "phone": "5034367612",
+    "email": "oleh.masnyk@botscrew.com",
+    "messCount": 0,
+    "date": "Today",
+    "perfect": false,
+    "subscriber": true
+  }
+]

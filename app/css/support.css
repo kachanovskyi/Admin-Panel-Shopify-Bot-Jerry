@@ -1,0 +1,32 @@
+.new-subject {
+    width: 100%;
+    height: 50px;
+    line-height: 140%;
+    margin-bottom: 20px;
+    float: right;
+    position: relative;
+    padding: 15px 20px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.broadcast-container .new-message {
+    width: 100%;
+}
+
+.new-message {
+    padding-right: 0;
+}
+.new-message-outer .row {
+    text-align: left;
+    padding-left: 12%;
+    margin: 0;
+}
+
+.broadcast-container .new-subject::placeholder,
+.new-message::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}

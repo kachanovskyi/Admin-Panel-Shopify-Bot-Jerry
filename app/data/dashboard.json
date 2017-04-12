@@ -1,0 +1,39 @@
+{
+  "firstLogin": "false",
+  "credits": "25",
+  "total": "1000",
+  "perfect": "940",
+  "problem": "60",
+  "dialogs": [
+    {
+      "img": "images/pic.png",
+      "buyer": "Oleh Masnyk",
+      "orderID": "223234342",
+      "messages": "12"
+    },
+    {
+      "img": "images/pic.png",
+      "buyer": "Max Gladysh",
+      "orderID": "2232343232",
+      "messages": "1"
+    },
+    {
+      "img": "images/pic.png",
+      "buyer": "Vova Kachanovskyi",
+      "orderID": "223232342",
+      "messages": "20"
+    },
+    {
+      "img": "images/pic.png",
+      "buyer": "Oleh Pylypchak",
+      "orderID": "123232342",
+      "messages": "10"
+    },
+    {
+      "img": "images/pic.png",
+      "buyer": "Nazar Hembara",
+      "orderID": "2231232342",
+      "messages": "13"
+    }
+  ]
+}

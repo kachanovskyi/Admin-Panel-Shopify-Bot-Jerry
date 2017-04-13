@@ -47,6 +47,12 @@ HiSumo
                 controllerAs: 'settings'
             })
 
+            .when('/settings-review', {
+                templateUrl: 'pages/settings-review.html',
+                controller: 'SettingsCtrl',
+                controllerAs: 'settings'
+            })
+
             .when('/broadcast', {
                 templateUrl: 'pages/broadcast.html',
                 controller: 'BroadcastCtrl',

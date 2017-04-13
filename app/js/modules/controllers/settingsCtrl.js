@@ -45,8 +45,10 @@ HiSumo.controller('SettingsCtrl', ['$scope', '$route', '$location', '$http', 'ch
                 $(".editable").on('keydown', function (evt) {
                     if($(this).attr('id').includes('editPart')) { //////write checkForEdit span function and use it down
                         var messLength = 0;
-                        $(".editable").each(function () {           ////use function here
-                            messLength += $(this).text().length;
+                        $(".editable").each(function () {
+                            if($(this).attr('id').includes('editPart')) {
+                                messLength += $(this).text().length;
+                            }                                               ///use function here
                         });
 
                         console.log($(this));

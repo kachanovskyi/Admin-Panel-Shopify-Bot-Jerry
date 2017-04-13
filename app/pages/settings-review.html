@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="messages-container messages row">
+    <div class="top row">
+      <a class="tab-btn" href="/settings">Customize messages</a>
+      <a class="tab-btn chatbot" href="/settings-disable" ng-show="settings.chatbotState">Disable chatbot</a>
+      <a class="tab-btn chatbot" href="/settings-disable" ng-show="!settings.chatbotState">Enable chatbot</a>
+      <a class="tab-btn" href="/settings-notifications">Notifications</a>
+      <a class="tab-btn" href="/settings-recharge">Recharge</a>
+      <a class="tab-btn active" href="/settings-review">Review</a>
+    </div>
+
+    <div class="broadcast-container row">
+      <div class="recharge-inner col-xs-4">
+        <h2>Review</h2>
+        <p class="subheader">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+      <div class="col-xs-4 new-message-outer">
+        <div class="row">
+          <p class="title">Your Yotpo link:</p>
+          <input id="yotpoLink" type="text" class="new-subject" placeholder="Type your link here"/>
+        </div>
+        <a class="blue-btn" ng-click="support.submitMessage()">Save</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <p>Your Yotpo link was saved.</p>
+      <div class="align-right">
+        <a class="classic-btn" ng-click="support.successModalClose()">Got it!</a>
+      </div>
+    </div>
+  </div>
+</div>

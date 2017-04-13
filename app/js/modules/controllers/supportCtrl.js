@@ -3,8 +3,9 @@ HiSumo.controller('SupportCtrl', ['$scope', '$location', '$http', function ($sco
 
     vm.submitMessage = function () {
         var message = $('#supportMessage').val();
+        var title = $('#supportTittle').val();
 
-        if(message.length > 0) {
+        if (message.length > 0) {
             $('#successModal')
                 .fadeIn(300)
                 .on("click", function () {
@@ -13,7 +14,12 @@ HiSumo.controller('SupportCtrl', ['$scope', '$location', '$http', function ($sco
                 .find('.modal-content').on("click", function (e) {
                 e.stopPropagation();
             });
-            // $http.post...        finish this
+            var data = {
+                shopName: $('#shopId').val(),
+                title: title,
+                body: message
+            }
+            $http.post("https://0e9990ad.ngrok.io/shop/sendEmail",data)
         }
     };
 

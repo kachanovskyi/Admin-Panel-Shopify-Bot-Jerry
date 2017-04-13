@@ -1,35 +1,41 @@
 <div class="wrapper">
-  <div class="messages-container messages row">
-    <div class="top row">
-      <a class="tab-btn" href="/settings">Customize messages</a>
-      <a class="tab-btn chatbot" href="/settings-disable">Disable chatbot</a>
-      <a class="tab-btn" href="/settings-notifications">Notifications</a>
-      <a class="tab-btn active" href="/settings-recharge">Recharge</a>
+    <div class="messages-container messages row">
+        <div class="top row">
+            <a class="tab-btn" href="/settings">Customize messages</a>
+            <a class="tab-btn chatbot" href="/settings-disable" ng-show="settings.chatbotState">Disable chatbot</a>
+            <a class="tab-btn chatbot" href="/settings-disable" ng-show="!settings.chatbotState">Enable chatbot</a>
+            <a class="tab-btn" href="/settings-notifications">Notifications</a>
+            <a class="tab-btn active" href="/settings-recharge">Recharge</a>
+        </div>
+
+        <div class="recharge-container row">
+            <div class="recharge-inner col-xs-4">
+                <h2>Recharge</h2>
+                <p class="subheader">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit.
+                </p>
+                <p class="balance">Your current balance: <span>{{settings.creditsCount}} credits</span></p>
+                <p class="credits-amount">Please enter desired amount of credits:</p><input id="creditsAmount"
+                                                                                            type="text"
+                                                                                            placeholder="E.g: 200"/>
+                <a id="btnRecharge" class="blue-btn disabled">Proceed</a>
+            </div>
+        </div>
     </div>
 
-    <div class="recharge-container row">
-      <div class="recharge-inner col-xs-4">
-        <h2>Recharge</h2>
-        <p class="subheader">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus lectus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <p class="balance">Your current balance: <span>{{settings.creditsCount}} credits</span></p>
-        <p class="credits-amount">Please enter desired amount of credits:</p><input id="creditsAmount" type="text" placeholder="E.g: 200"/>
-        <a id="btnRecharge" class="blue-btn disabled">Proceed {{settings.rechargeAmount}}</a>
-      </div>
+    <div id="feedbackModal" class="modal">
+        <div class="col-xs-5 modal-content feedback">
+            <div class="top">
+                <a class="close"><img src="/images/close-icon.png"/></a>
+            </div>
+            <div class="content">
+                <img id="feedbackImg" src="/images/happy.png"/>
+                <p>Thank you for installing HiSumo. We’ll be glad to recieve any feedback from you. It helps us improve
+                    our product.</p>
+                <a id="leaveFeedback" class="accept-btn" target="_blank" href="https://apps.shopify.com/testjerry">Leave feedback</a>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div id="feedbackModal" class="modal">
-    <div class="col-xs-5 modal-content feedback">
-      <div class="top">
-        <a class="close"><img src="/images/close-icon.png"/></a>
-      </div>
-      <div class="content">
-        <img id="feedbackImg" src="/images/happy.png"/>
-        <p>Thank you for installing HiSumo. We’ll be glad to recieve any feedback from you. It helps us improve our product.</p>
-        <a id="leaveFeedback" class="accept-btn"target="_blank" href="#">Leave feedback</a>
-      </div>
-    </div>
-  </div>
 </div>
+

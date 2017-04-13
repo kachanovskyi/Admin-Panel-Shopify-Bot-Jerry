@@ -66,7 +66,7 @@
           <div class="col-xs-5 table-display text-right">
             <div class="align-right table-cell">
               <p class="info-p"><span>Messages sent: </span>{{dialog.messages}}</p>
-              <a class="blue-btn">Go to messages</a>
+              <a class="blue-btn" ng-click="dashboard.goToMessage($index)">Go to messages</a>
             </div>
           </div>
         </div>

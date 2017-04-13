@@ -96,22 +96,22 @@ p {
 }
 
 /*.messages-container .top .tab-btn {*/
-/*padding-bottom: 21px;*/
-/*padding-top: 20px;*/
+    /*padding-bottom: 21px;*/
+    /*padding-top: 20px;*/
 /*}*/
 
 /*.messages-container .top .tab-btn.active {*/
-/*padding-top: 20px;*/
-/*padding-bottom: 20px;*/
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
 /*}*/
 
 /*.messages-container.amount .top .tab-btn {*/
-/*padding-bottom: 24px;*/
+    /*padding-bottom: 24px;*/
 /*}*/
 
 /*.messages-container.amount .top .tab-btn.active {*/
-/*padding-top: 22px;*/
-/*padding-bottom: 22px;*/
+    /*padding-top: 22px;*/
+    /*padding-bottom: 22px;*/
 /*}*/
 
 .info-p {
@@ -238,11 +238,9 @@ p {
     vertical-align: middle;
     text-align: right;
 }
-
 .top .align-right {
     margin-top: 10px;
 }
-
 .bottom .top .align-right {
     margin-top: 18px;
 }
@@ -443,7 +441,6 @@ select:active, select:focus {
     display: table-cell;
     vertical-align: middle;
 }
-
 .pagination-container ul li > a {
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -457,7 +454,6 @@ select:active, select:focus {
     margin: 0 5px;
 
 }
-
 .pagination-container ul li:first-child,
 .pagination-container ul li:last-child {
     display: none;

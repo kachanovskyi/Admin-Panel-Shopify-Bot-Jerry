@@ -20,10 +20,10 @@
     display: inline-block;
     border-right: 1px solid #E2E2E3;
 }
-    .top .top-inner .tab-btn.active {
-        padding-top: 22px;
-        padding-bottom: 22px;
-    }
+.top .top-inner .tab-btn.active {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
 .top-inner.right {
     padding-left: 0;
     border-right: none;
@@ -83,55 +83,55 @@
     cursor: pointer;
     outline: none;
 }
-    .dialog .date {
-        margin-top: 2px;
-    }
-    .user-info {
-        display: inline-block;
-        vertical-align: middle;
-    }
-        .user-info .name,
-        .top-inner .name {
-            font-size: 14px;
-            line-height: 100%;
-            color: #000000;
-            margin-bottom: 5px;
-        }
-        .top-inner .name {
-            margin-bottom: 0;
-            margin-top: 5px;
-        }
+.dialog .date {
+    margin-top: 2px;
+}
+.user-info {
+    display: inline-block;
+    vertical-align: middle;
+}
+.user-info .name,
+.top-inner .name {
+    font-size: 14px;
+    line-height: 100%;
+    color: #000000;
+    margin-bottom: 5px;
+}
+.top-inner .name {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
 
-        .user-info .transaction-type {
-            margin-bottom: 0;
-            display: inline-block;
-            vertical-align: middle;
-        }
-            .user-info .dot {
-                display: inline-block;
-                background: #6FCF97;
-                width: 5px;
-                height: 5px;
-                border-radius: 100px;
-                margin-right: 18px;
-                vertical-align: middle;
-            }
-            .user-info .perfect > .dot {
-                background: #6FCF97;
-            }
-            .user-info .perfect > p {
-                color: #6FCF97;
-            }
+.user-info .transaction-type {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.user-info .dot {
+    display: inline-block;
+    background: #6FCF97;
+    width: 5px;
+    height: 5px;
+    border-radius: 100px;
+    margin-right: 18px;
+    vertical-align: middle;
+}
+.user-info .perfect > .dot {
+    background: #6FCF97;
+}
+.user-info .perfect > p {
+    color: #6FCF97;
+}
 
-            .user-info .problem {
-                color: #EB5757;
-            }
-            .user-info .problem > .dot {
-                background: #EB5757;
-            }
-            .user-info .problem > p {
-                color: #EB5757;
-            }
+.user-info .problem {
+    color: #EB5757;
+}
+.user-info .problem > .dot {
+    background: #EB5757;
+}
+.user-info .problem > p {
+    color: #EB5757;
+}
 
 .avatar {
     width: 50px;
@@ -155,57 +155,57 @@
     background: #ffffff;
     padding: 0;
 }
-    .conversation-container .input-container {
-        padding: 27px 0;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        background: #ffffff;
-        border-top: 1px solid #E2E2E3;
-    }
+.conversation-container .input-container {
+    padding: 27px 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #E2E2E3;
+}
 
-    .conversation {
-        position: absolute;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column-reverse;
-        bottom: 78px;
-        width: 100%;
-        height: calc(100vh - 30px - 66px - 80px);
-    }
-    .conversation::-webkit-scrollbar {
-        display: none;
-    }
-    .conversation .chat-message {
-        font-size: 14px;
-        padding: 14px 20px;
-        margin: 5px 30px;
-        display: inline;
-        clear: both;
-        max-width: 44%;
-        word-wrap: break-word;
-        line-height: 100%;
-        position: relative;
-        border-radius: 18px;
-    }
-    .conversation .chat-message.bot {
-        float: right;
-        background: #FFFFFF;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        border-radius: 10px;
-        color: #000000;
-    }
-    .conversation .chat-message.user {
-        float: left;
-        background: #2F80ED;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        border-radius: 100px;
-        color: #FFFFFF;
-    }
+.conversation {
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    bottom: 78px;
+    width: 100%;
+    height: calc(100vh - 30px - 66px - 80px);
+}
+.conversation::-webkit-scrollbar {
+    display: none;
+}
+.conversation .chat-message {
+    font-size: 14px;
+    padding: 14px 20px;
+    margin: 5px 30px;
+    display: inline;
+    clear: both;
+    max-width: 44%;
+    word-wrap: break-word;
+    line-height: 100%;
+    position: relative;
+    border-radius: 18px;
+}
+.conversation .chat-message.bot {
+    float: right;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #000000;
+}
+.conversation .chat-message.user {
+    float: left;
+    background: #2F80ED;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 100px;
+    color: #FFFFFF;
+}
 
 #messageInput {
     vertical-align: middle;

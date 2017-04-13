@@ -9,7 +9,12 @@ HiSumo
             amount: 0
         }
     })
-
+    .factory('buyerMessages', function () {
+        return {
+            name: "",
+            phone: ""
+        }
+    })
     .factory('chatbotState', function () {
         return {
             enabled: false

@@ -3,10 +3,10 @@ HiSumo.controller('MainCtrl', ['$scope', '$location', '$http', 'loginFactory', f
 
     vm.firstLogin = loginFactory.firstLogin;
 
-    $http.get('data/shop.json').then(function (res) {
     // $http.get('https://0e9990ad.ngrok.io/shop?shop=' + $('#shopId').val()).then(function (res) {
+    $http.get('data/shop.json').then(function (res) {
 
-        if(res.data.firstVisit == false) {
+        if(res.data.firstVisit === false) {
             vm.firstLogin = loginFactory.firstLogin = false;
         }
 

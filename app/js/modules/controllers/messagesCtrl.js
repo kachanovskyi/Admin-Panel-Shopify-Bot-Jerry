@@ -1,4 +1,5 @@
-HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($scope, $location, $http) {
+HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', 'buyerMessages',
+function ($scope, $location, $http, buyerMessages) {
     var vm = this;
 
     vm.dialogs = [];
@@ -20,8 +21,8 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
     };
 
     var getBuyer = function () {
-        $http.get('https://0e9990ad.ngrok.io/buyers/dto?shop=' + $('#shopId').val() +
-            '&page=' + vm.buyerPage + '&size=10').then(function (res) {
+        // $http.get('https://0e9990ad.ngrok.io/buyers/dto?shop=' + $('#shopId').val() +
+        $http.get('data/messages.json').then(function (res) {
             for (var x in res.data) {
                 var obj = {};
                 var dialog = res.data[x];
@@ -42,9 +43,20 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
             if (res.data.length < 10) {
                 vm.hasNextBuyer = false;
             }
-            vm.openDialog(startIndex, vm.dialogs[startIndex].dialogId);
+            if (buyerMessages.name !== ""){
+                vm.titleName = buyerMessages.name;
+                vm.titlePhone = buyerMessages.phone;
+                vm.messagePage = 0;
+                vm.messageHasNext = true;
+                $(".conversation").children().remove();
+                buyerMessages.name = "";
+                buyerMessages.phone = "";
+                getMessage();
+            }else {
+                vm.openDialog(startIndex, vm.dialogs[startIndex].dialogId);
+            }
         });
-    }
+    };
 
     vm.userMessage = function () {
         var text = input.val().trim();
@@ -54,14 +66,18 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
             input.val('');
             vm.send(text, 'bot');
 
-            $http.get('https://0e9990ad.ngrok.io/send?shopId=' + vm.shopName +
-                '&to=' + vm.titlePhone + '&text=' + text).then(function (res) {
-
-            });
+            // $http.get('https://0e9990ad.ngrok.io/send?shopId=' + $('#shopId').val() +
+            //     '&to=' + vm.titlePhone + '&text=' + text).then(function (res) {
+            //
+            // });
 
         } else {
             $("#messageInput").val('').focus();
         }
+    };
+
+    vm.clean = function () {
+
     };
 
     vm.send = function (text, type) {
@@ -75,7 +91,7 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
             );
 
         chatScrollBottom();
-    }
+    };
 
     vm.addToEnd = function (text, type) {
         var message = $('<div class="chat-message">').addClass(type);
@@ -86,12 +102,12 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
             .appendTo(
                 $('.conversation')
             );
-    }
-
+    };
 
     vm.inputEnter = function (keyEvent) {
         if (keyEvent.which === 13) {
-            keyEvent.preventDefault();
+            keyEvent.prevent;
+            efault();
             vm.userMessage();
         }
     };
@@ -101,12 +117,14 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
 
     vm.openDialog = function ($index, dialogId) {
 
-        vm.shopName = 'teststore11111111111.myshopify.com';
-        vm.titlePhone = '5034367607';
+        // vm.shopName = 'teststore11111111111.myshopify.com';
+        // vm.titlePhone = '5034367607';
         vm.titleName = vm.dialogs[$index].buyer;
-        // vm.titlePhone = vm.dialogs[$index].phone;
+        vm.titlePhone = vm.dialogs[$index].phone;
+        vm.messagePage = 0;
+        vm.messageHasNext = true;
+        $(".conversation").children().remove();
         getMessage();
-
         console.log($index);
         console.log('I\'m opening dialog with id of ' + dialogId);
     };
@@ -114,14 +132,14 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
     vm.loadBuyers();
 
     var getMessage = function () {
-        $http.get('https://0e9990ad.ngrok.io/conversation?shop=' + vm.shopName +
-            '&sort=time,desc&phone=' + vm.titlePhone + '&page=' + vm.messagePage + '&size=20').then(function (res) {
+        // $http.get('https://0e9990ad.ngrok.io/conversation?shop=' + $('#shopId').val() + '&sort=time,desc&phone=' + vm.titlePhone + '&page=' + vm.messagePage + '&size=20').then(function (res) {
+        $http.get('data/messages.json').then(function (res) {
             console.log($('#shopId').val());
             console.log(vm.titlePhone);
             console.log(res.data);
             for (var x in res.data) {
                 var dialog = res.data[x];
-                if (dialog.sender == vm.titlePhone) {
+                if (dialog.sender === vm.titlePhone) {
                     vm.addToEnd(dialog.value, 'user');
                 } else {
                     vm.addToEnd(dialog.value, 'bot');
@@ -134,7 +152,7 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
     }
 
     var findBuyers = function (query) {
-        $http.get('https://0e9990ad.ngrok.io/buyers/dto?shop=' + vm.shopName + '&query=' + query).then(function (res) {
+        $http.get('https://0e9990ad.ngrok.io/buyers/dto?shop=' + $('#shopId').val() + '&query=' + query).then(function (res) {
             // $http.get('https://0e9990ad.ngrok.io/conversation?shop=' + vm.shopName +
             //     '&sort=time,desc&phone=' + vm.titlePhone + '&page=' + vm.messagePage + '&size=20').then(function (res) {
             for (var x in res.data) {
@@ -162,13 +180,14 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
         });
     }
 
-    $(".search-input").change(function () {
+    $(".search-input").on("keyup", function () {
         console.log($(this).val())
         vm.dialogs = [];
         findBuyers($(this).val());
     });
 
     $('.conversation').scroll(function () {
+        console.log("load new");
         if ($(this).scrollTop() == 0 && vm.messageHasNext) {
             getMessage();
         }
@@ -179,22 +198,6 @@ HiSumo.controller('MessagesCtrl', ['$scope', '$location', '$http', function ($sc
             getBuyer();
         }
     });
-
-
-    var taskSocket = new WebSocket("ws://https://0e9990ad.ngrok.io/webhooks/recieve");
-    taskSocket.onmessage = function (message) {
-        $scope.tasks = JSON.parse(message.data);
-        $scope.$apply();
-        console.log($scope.tasks);
-    };
-    taskSocket.onclose = function () {
-        $scope.message = {
-            type: "danger",
-            short: "Socket error",
-            long: "An error occured with the WebSocket."
-        };
-        $scope.$apply();
-    }
 
 }]);
 

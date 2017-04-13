@@ -47,13 +47,13 @@
     float: right;
     position: relative;
 }
-    /*.new-message .symbols-left {*/
-        /*width: 22px;*/
-        /*background: green;*/
-        /*position: absolute;*/
-        /*bottom: 0;*/
-        /*right: 0;*/
-    /*}*/
+/*.new-message .symbols-left {*/
+/*width: 22px;*/
+/*background: green;*/
+/*position: absolute;*/
+/*bottom: 0;*/
+/*right: 0;*/
+/*}*/
 
 .tab-btn .amount {
     padding: 1px 10px;
@@ -75,10 +75,10 @@
 .subscribers-container {
     margin: 0;
 }
-    .subscribers-container .messages-block .warning-btn {
-        margin-right: 30px;
-        margin-left: 0;
-    }
+.subscribers-container .messages-block .warning-btn {
+    margin-right: 30px;
+    margin-left: 0;
+}
 
 .tooltip {
     position: relative;
@@ -131,9 +131,9 @@
     border-radius: 2px;
     padding: 10px 8px;
 }
-    .recharge-reminder > p {
-        color: #FFFFFF;
-        margin-bottom: 0;
-        text-align: left;
-        font-size: 11px;
-    }
+.recharge-reminder > p {
+    color: #FFFFFF;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 11px;
+}

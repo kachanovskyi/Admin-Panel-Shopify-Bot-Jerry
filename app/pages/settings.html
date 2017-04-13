@@ -2,7 +2,8 @@
     <div class="messages-container messages row">
         <div class="top row">
             <a class="tab-btn active" href="/settings">Customize messages</a>
-            <a class="tab-btn chatbot" href="/settings-disable">Disable chatbot</a>
+            <a class="tab-btn chatbot" href="/settings-disable" ng-show="settings.chatbotState">Disable chatbot</a>
+            <a class="tab-btn chatbot" href="/settings-disable" ng-show="!settings.chatbotState">Enable chatbot</a>
             <a class="tab-btn" href="/settings-notifications">Notifications</a>
             <a class="tab-btn" href="/settings-recharge">Recharge</a>
         </div>
@@ -21,13 +22,15 @@
                         {{template.group}}
                     </p>
                     <div class="align-right scroll-btns">
-                        <a class="scroll-back"><img src="/images/right.svg"/> </a>
+                        <a class="scroll-back" ng-click="settings.scrollLeft($index, 'messages-group-')"><img src="/images/right.svg"/> </a>
+                        <a class="scroll-next" ng-click="settings.scrollRight($index, 'messages-group-')"><img src="/images/right.svg"/> </a>
                     </div>
-                    <div class="messages-group">
+                    <div id="messages-group-{{$index}}" class="messages-group scrollable">
                         <div class="message-template" ng-repeat="value in template.values">
                             <p>{{value.value}}</p>
                             <a class="classic-btn edit"
                                ng-click="settings.editTemplate($parent.$index, $index)">Edit</a>
+                            <a class="delete" ng-click="settings.openDeleteModal($parent.$index, $index)"><img src="/images/delete.svg"></a>
                         </div>
                         <div class="message-template add">
                             <a class="classic-btn edit" ng-click="settings.addTemplate($index)">Add new variant</a>
@@ -37,25 +40,38 @@
                 <div id="editModal" class="modal">
                     <div class="modal-content edit">
                         <!--<span class="close" ng-click="settings.closeEdit()">&times;</span>-->
-                        <div class="edit-field">
-                            <!--<span>{{settings.messTemplates[settings.currentParentIndex]}}</span>-->
-                            <span id="editMessageOne" class="editable" contenteditable="true"></span>
-                            <span ng-show="settings.messTemplates[settings.currentParentIndex].parameters.length >= 1" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
-                            <span id="editMessageTwo" ng-show="settings.message.length >= 1" class="editable" contenteditable="true"></span>
+                        <div class="edit-field" ng-show="settings.parts != undefined" ng-repeat="part in settings.messTemplates[settings.currentParentIndex].parameters">
+                            <span id="editPart{{$index * 3}}" class="editable" contenteditable="true">{{settings.parts[$index * 3]}}</span>
+                            <span id="editPart{{$index * 3 + 1}}" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
+                            <span id="editPart{{$index * 3 + 2}}" class="editable" contenteditable="true">{{settings.parts[$index * 3 + 2]}}</span>
+                        </div>
+                        <div class="edit-field" ng-show="settings.parts.length == 0">
+                            <span id="editMess" class="editable" contenteditable="true">{{settings.mess}}</span>
                         </div>
                         <a class="classic-btn edit" ng-click="settings.updateMessage()">Save</a>
                     </div>
                 </div>
                 <div id="createModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" ng-click="settings.closeCreate()">&times;</span>
-                        <div class="edit-field">
-                            <!--<span>{{settings.messTemplates[settings.currentParentIndex]}}</span>-->
-                            <span id="createMessageOne" class="editable" contenteditable="true">{{settings.messageOne}}</span>
-                            <span ng-show="settings.messTemplates[settings.currentParentIndex].parameters.length >= 1" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
-                            <span id="createMessageTwo" ng-show="settings.message.length >= 1" class="editable" contenteditable="true">{{settings.messageTwo}}</span>
+                    <div class="modal-content edit">
+                        <!--<span class="close" ng-click="settings.closeCreate()">&times;</span>-->
+                        <div class="edit-field" ng-show="settings.createParts != undefined" ng-repeat="part in settings.messTemplates[settings.currentParentIndex].parameters">
+                            <span id="createPart{{$index * 3}}" class="editable" contenteditable="true">{{settings.createParts[$index * 3]}}</span>
+                            <span id="createPart{{$index * 3 + 1}}" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
+                            <span id="createPart{{$index * 3 + 2}}" class="editable" contenteditable="true">{{settings.createParts[$index * 3 + 2]}}</span>
+                        </div>
+                        <div class="edit-field" ng-show="settings.createParts.length == 0">
+                            <span id="createMess" class="editable" contenteditable="true">{{settings.createMess}}</span>
                         </div>
                         <a class="classic-btn edit" ng-click="settings.createMessage()">Save</a>
+                    </div>
+                </div>
+                <div id="deleteMessageModal" class="modal">
+                    <div class="modal-content">
+                        <p>Are you sure you want to delete this message?</p>
+                        <div class="align-right">
+                            <a class="classic-btn" ng-click="settings.confirmModalClose()">Cancel</a>
+                            <a class="warning-btn" ng-click="settings.deleteMessage()">Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>

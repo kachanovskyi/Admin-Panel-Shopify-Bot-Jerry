@@ -14,8 +14,9 @@ HiSumo.controller('DashboardCtrl', ['$scope', '$location', '$http', 'loginFactor
                 vm.totalBuyers = res.data.buyerCount;
                 vm.totalItems = vm.totalBuyers;
                 if (vm.total > 0) {
-                    $('.messages-container.amount .amount-info .empty').addClass('hidden');
-                    $('.messages-container.amount .amount-info .amounts').removeClass('hidden');
+                    $('.messages-container .amount-info .empty').addClass('hidden');
+                    $('.messages-container .amount-info .amounts').removeClass('hidden');
+                    $('.messages-container .amount-info .messages-block').removeClass('hidden');
                 }
             }
         });

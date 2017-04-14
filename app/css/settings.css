@@ -35,6 +35,7 @@
     white-space: nowrap;
     margin-bottom: 20px;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .message-template {
@@ -255,6 +256,8 @@
     display: inline-block;
     min-width: 100%;
     max-width: 100%;
+    word-wrap: break-word;
+    min-height: 18px;
 }
 .modal-content.edit .edit-field .parameter {
     line-height: 140%;

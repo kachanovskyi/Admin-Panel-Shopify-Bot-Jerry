@@ -14,7 +14,7 @@
                 <p class="balance">Your current balance: <span>{{broadcast.credits}} credits</span></p>
             </div>
             <div class="col-xs-4 new-message-outer">
-                <textarea class="new-message" placeholder="Type your message..." ng-model="broadcast.text"></textarea>
+                <textarea class="new-message" maxlength="160" placeholder="Type your message..." ng-model="broadcast.text"></textarea>
                 <!--<div class="symbols-left">160</div>-->
                 <a ng-class="broadcast.credits ? 'blue-btn tooltip' : 'blue-btn tooltip disabled'" ng-click="broadcast.confirmModalOpen()">Send message
                     <span class="tooltiptext">Please recharge your account to continue enjoying the service</span>

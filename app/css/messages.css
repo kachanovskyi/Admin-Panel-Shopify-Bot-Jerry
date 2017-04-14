@@ -156,7 +156,7 @@
     padding: 0;
 }
 .conversation-container .input-container {
-    padding: 27px 0;
+    padding: 20px 0;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -171,7 +171,7 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column-reverse;
-    bottom: 78px;
+    bottom: 80px;
     width: 100%;
     height: calc(100vh - 30px - 66px - 80px);
 }
@@ -211,16 +211,14 @@
     vertical-align: middle;
     border: none;
     width: calc(100% - 200px);
-    padding: 0 0 0 30px;
+    padding: 10px 0 10px 30px;
     color: #828282;
+    line-height: 1.42857143;
 }
 #messageInput:focus {
     outline: none;
 }
 
-.send-btn-container {
-    margin-top: 2px;
-}
 .send-btn-container .blue-btn {
     padding: 10px 20px;
 }

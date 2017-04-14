@@ -34,7 +34,7 @@
 
             </div>
             <div class="input-container">
-                <input id="messageInput" type="text" placeholder="Type your message..." ng-keypress="messages.inputEnter($event)"/>
+                <input id="messageInput" maxlength="160" type="text" placeholder="Type your message..." ng-keypress="messages.inputEnter($event)"/>
                 <div class="send-btn-container align-right">
                     <a class="blue-btn" ng-click="messages.userMessage()">Send message</a>
                 </div>

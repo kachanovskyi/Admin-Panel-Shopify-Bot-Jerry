@@ -6,7 +6,6 @@ HiSumo.controller('DashboardCtrl', ['$scope', '$location', '$http', 'loginFactor
         $http.get('data/shop.json').then(function (res) {
             console.log(res.data);
             if (!loginFactory.firstLogin) {
-                $('.view-div').removeClass('center-no-float');
                 $('.left-menu').parent().removeClass('hidden');
                 creditsFactory.amount = vm.credits = res.data.creditsCount;
                 vm.total = res.data.messageCount;
@@ -18,8 +17,6 @@ HiSumo.controller('DashboardCtrl', ['$scope', '$location', '$http', 'loginFactor
                     $('.messages-container.amount .amount-info .empty').addClass('hidden');
                     $('.messages-container.amount .amount-info .amounts').removeClass('hidden');
                 }
-            } else {
-                $('.view-div').addClass('center-no-float');
             }
         });
 

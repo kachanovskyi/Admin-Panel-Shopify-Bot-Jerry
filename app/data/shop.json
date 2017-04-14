@@ -9,7 +9,7 @@
   "chatbotNotification": true,
   "problemSpottedNotification": true,
   "newReviewNotification": true,
-  "firstVisit": false,
+  "firstVisit": true,
   "messageCount": 67,
   "perfectCount": 1,
   "spottedCount": 1,

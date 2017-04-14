@@ -45,9 +45,11 @@
                             <span id="editPart{{$index * 3}}" class="editable" contenteditable="true">{{settings.parts[$index * 3]}}</span>
                             <span id="editPart{{$index * 3 + 1}}" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
                             <span id="editPart{{$index * 3 + 2}}" class="editable" contenteditable="true">{{settings.parts[$index * 3 + 2]}}</span>
+                            <span class="symbols">{{settings.symbolsLeft - settings.messLength}}</span>
                         </div>
                         <div class="edit-field" ng-show="settings.parts.length == 0">
                             <span id="editMess" class="editable" contenteditable="true">{{settings.mess}}</span>
+                            <span class="symbols">{{settings.symbolsLeft - settings.messLength}}</span>
                         </div>
                         <a class="classic-btn edit" ng-click="settings.updateMessage()">Save</a>
                     </div>
@@ -59,9 +61,11 @@
                             <span id="createPart{{$index * 3}}" class="editable" contenteditable="true">{{settings.createParts[$index * 3]}}</span>
                             <span id="createPart{{$index * 3 + 1}}" class="parameter">{{settings.messTemplates[settings.currentParentIndex].parameters[0].parameter}}</span>
                             <span id="createPart{{$index * 3 + 2}}" class="editable" contenteditable="true">{{settings.createParts[$index * 3 + 2]}}</span>
+                            <span class="symbols">{{settings.symbolsLeft - settings.messLength}}</span>
                         </div>
                         <div class="edit-field" ng-show="settings.createParts.length == 0">
                             <span id="createMess" class="editable" contenteditable="true">{{settings.createMess}}</span>
+                            <span class="symbols">{{settings.symbolsLeft - settings.messLength}}</span>
                         </div>
                         <a class="classic-btn edit" ng-click="settings.createMessage()">Save</a>
                     </div>

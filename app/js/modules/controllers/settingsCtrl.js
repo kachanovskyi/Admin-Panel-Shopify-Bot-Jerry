@@ -13,6 +13,7 @@ HiSumo.controller('SettingsCtrl', ['$scope', '$route', '$location', '$http', 'ch
             var params = vm.messTemplates[parentIndex].parameters;
 
             vm.symbolsLeft = 160;
+            vm.messLength = 0;
 
             if(params !== undefined) {
                 for(var x in params) {
@@ -41,40 +42,36 @@ HiSumo.controller('SettingsCtrl', ['$scope', '$route', '$location', '$http', 'ch
             console.log(vm.mess);
             vm.currentParentIndex = parentIndex;
             vm.currentIndex = index;
+
             editModal.fadeIn(300, function () {
-                $(".editable").on('keydown', function (evt) {
-                    if($(this).attr('id').includes('editPart')) { //////write checkForEdit span function and use it down
-                        var messLength = 0;
+                vm.messLength = 0;
+                $(".editable").each(function () {
+                    if((vm.parts.length !== undefined) && $(this).attr('id').includes('editPart')) {
+                        vm.messLength += $(this).text().length;
+                        $scope.$apply();
+                    } else if((vm.parts.length === 0) && $(this).attr('id') === "editMess") {
+                        vm.messLength += $(this).text().length;
+                        $scope.$apply();
+                    }
+                });
+
+                $(".editable").on('keyup paste change focus blur keydown', function (evt) {
+                    if($(this).attr('id').includes('editPart') || $(this).attr('id') === "editMess") {
+                        vm.messLength = 0;
                         $(".editable").each(function () {
-                            if($(this).attr('id').includes('editPart')) {
-                                messLength += $(this).text().length;
-                            }                                               ///use function here
+                            if((vm.parts.length !== undefined) && $(this).attr('id').includes('editPart')) {
+                                vm.messLength += $(this).text().length;
+                                $scope.$apply();
+                            } else if((vm.parts.length === 0) && $(this).attr('id') === "editMess") {
+                                vm.messLength += $(this).text().length;
+                                $scope.$apply();
+                            }
                         });
 
-                        console.log($(this));
-                        console.log(messLength);
-                        // if(excempt.indexOf(evt.which) === -1 && $(this).text().length > length) {
-                        if(excempt.indexOf(evt.which) === -1 && messLength > vm.symbolsLeft) {
-                            alert('no more symbols allowed ' + messLength);
+                        if(excempt.indexOf(evt.which) === -1 && vm.messLength >= vm.symbolsLeft) {
                             evt.preventDefault();
                             return false;
                         }
-                    }
-                });
-                $(".editable").each(function(index,elem) {
-                    var $elem = $(elem);
-                    // Check for a property called data-input-length="value"
-                    var length = vm.symbolsLeft;
-                    // Validation of value
-                    if(!isNaN(length)) {
-                        // Register keydown handler
-                        $elem.on('keydown',function(evt){
-                            // If the key isn't excempt AND the text is longer than length stop the action.
-                            if(excempt.indexOf(evt.which) === -1 && $elem.text().length > length) {
-                                evt.preventDefault();
-                                return false;
-                            }
-                        });
                     }
                 });
             })
@@ -193,10 +190,20 @@ HiSumo.controller('SettingsCtrl', ['$scope', '$route', '$location', '$http', 'ch
         console.log(vm.messTemplates);
 
         vm.addTemplate = function (parentIndex) {
+            var params = vm.messTemplates[parentIndex].parameters;
+
+            vm.symbolsLeft = 160;
+            vm.messLength = 0;
+
+            if(params !== undefined) {
+                for(var x in params) {
+                    vm.symbolsLeft -= params[x].size;
+                }
+            }
+
             vm.createMess = "";
             vm.createParts = [];
-            console.log(parentIndex);
-            console.log(vm.messTemplates[parentIndex].parameters);
+
             vm.currentParentIndex = parentIndex;
             if (vm.messTemplates[parentIndex].parameters.length >= 1) {
                 for (var i = 0; i < vm.messTemplates[parentIndex].parameters.length; i++) {
@@ -208,16 +215,37 @@ HiSumo.controller('SettingsCtrl', ['$scope', '$route', '$location', '$http', 'ch
                 vm.createMess = "";
             }
 
-            createModal
-                .fadeIn(300)
+            createModal.fadeIn(300, function () {
+                vm.messLength = 0;
+
+                $(".editable").on('keyup paste change focus blur keydown', function (evt) {
+                    if($(this).attr('id').includes('createPart') || $(this).attr('id') === "createMess") {
+                        vm.messLength = 0;
+                        $(".editable").each(function () {
+                            if((vm.createParts.length !== undefined) && $(this).attr('id').includes('createPart')) {
+                                vm.messLength += $(this).text().length;
+                                $scope.$apply();
+                            } else if((vm.createParts.length === 0) && $(this).attr('id') === "createMess") {
+                                vm.messLength += $(this).text().length;
+                                $scope.$apply();
+                            }
+                        });
+
+                        if(excempt.indexOf(evt.which) === -1 && vm.messLength >= vm.symbolsLeft) {
+                            evt.preventDefault();
+                            return false;
+                        }
+                    }
+                });
+            })
                 .on("click", function () {
                     $(this).fadeOut(300);
                 })
                 .find('.modal-content').on("click", function (e) {
                 e.stopPropagation();
             });
-            ;
         };
+
         var chatbotModal;
         vm.chatbotStateModalOpen = function () {
             chatbotModal = $('#disabledStateModal');

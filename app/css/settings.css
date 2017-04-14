@@ -227,6 +227,7 @@
 }
 
 .modal-content.edit .edit-field {
+    position: relative;
     padding: 10px 6px;
     height: 140px;
     width: 256px;
@@ -234,11 +235,26 @@
     border: 0.5px solid rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     border-radius: 4px;
+    overflow-y: auto;
+}
+.modal-content.edit .edit-field .symbols {
+    position: fixed;
+    bottom: 78px;
+    right: 6px;
+    width: 44px;
+    background: #6FCF97;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 11px;
+    line-height: 140%;
 }
 .modal-content.edit .edit-field .editable {
     outline: none;
     line-height: 140%;
     color: #000000;
+    display: inline-block;
+    min-width: 100%;
+    max-width: 100%;
 }
 .modal-content.edit .edit-field .parameter {
     line-height: 140%;
